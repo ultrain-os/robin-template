@@ -11,7 +11,7 @@
   "scripts": {
     "deploy": "node migrations/migrate.js",
     "test": "node test/MyContract.spec.js",
-    "build:optimized": "usc contract/MyContract.ts -b build/MyContract.wasm -g build/MyContract.abi  -O -t build/MyContract.wast --validate --optimize --noDebug,",
+    "build:optimized": "usc contract/MyContract.ts -b build/MyContract.wasm -g build/MyContract.abi  -O -t build/MyContract.wast --validate --optimize --noDebug",
     "gen:js": "tsc -p tsconfig.es2017.json",
     "gen:linter": "tsc --project ./lint/src --outDir ./lint --diagnostics",
     "build": "run-s clean && mkdir build && run-p build:*",
@@ -41,7 +41,6 @@
     "node": ">=8.9"
   },
   "devDependencies": {
-    "TsSDK": "^0.0.1",
     "ava": "^0.25.0",
     "codecov": "^3.0.0",
     "cz-conventional-changelog": "^2.1.0",
@@ -58,8 +57,7 @@
     "tslint-config-prettier": "^1.8.0",
     "tslint-immutable": "^4.5.1",
     "typedoc": "^0.11.1",
-    "typescript": "^2.8.3",
-    "ultrascript": "^0.5.0"
+    "typescript": "^2.8.3"
   },
   "ava": {
     "failFast": true,
@@ -90,7 +88,6 @@
   },
   "dependencies": {
     "ContractSdk": "git+ssh://git@github.com:ultrain-os/TsSDK.git",
-    "u3.js": "https://github.com/ultrain-os/ultrain-jssdk.git",
-    "ultrascript": "git+ssh://git@github.com:ultrain-os/assemblyscript.git"
+    "u3.js": "git+ssh://git@github.com:ultrain-os/u3.js.git"
   }
 }
