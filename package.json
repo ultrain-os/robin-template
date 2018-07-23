@@ -88,6 +88,7 @@
   },
   "dependencies": {
     "ContractSdk": "git+ssh://git@github.com:ultrain-os/TsSDK.git",
-    "u3.js": "git+ssh://git@github.com:ultrain-os/u3.js.git"
+    "u3.js": "git+ssh://git@github.com:ultrain-os/u3.js.git",
+    "ultrascript": "git+ssh://git@github.com:ultrain-os/assemblyscript.git"
   }
 }
