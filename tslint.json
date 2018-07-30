@@ -1,5 +1,5 @@
 {
-  "extends": "./lint/index.json",
+  "extends": "./node_modules/lint/index.json",
   "defaultSeverity": "warning",
   "rules": {
     "as-internal-case": {},
