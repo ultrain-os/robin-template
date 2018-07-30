@@ -1,6 +1,6 @@
 const network = {
   httpEndpoint: 'http://127.0.0.1:8888',
-  broadcast: true,
+  broadcast: false,
   debug: false,
   sign: true
 };
