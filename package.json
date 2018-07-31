@@ -12,7 +12,7 @@
     "fix": "run-s fix:*",
     "fix:prettier": "prettier \"contract/**/*.ts\" --write",
     "fix:tslint": "tslint --fix --project .",
-    "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('contract-base must be installed with Yarn: https://yarnpkg.com/')\""
+    "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('contract-base must be installed with Yarn: https://yarnpkg.com/')\" && yarn global add ultrascript"
   },
   "engines": {
     "node": ">=8.9"
