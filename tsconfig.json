@@ -3,6 +3,10 @@
   "include": [
     "./contract/*.ts"
   ],
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "allowJs": true
+  },
   "typedocOptions": {
     "mode": "modules",
     "out": "docs",
