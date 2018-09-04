@@ -1,18 +1,18 @@
 {
-  "name": "contract-foundation",
-  "version": "1.0.2",
-  "description": "The foundation library for smart contract written in assemblyscript",
+  "name": "robin-template",
+  "version": "0.0.1",
+  "description": "The robin default template",
   "main": "contract/index.ts",
   "typings": "index.d.ts",
-  "module": "build/module/index.js",
   "repository": "https://github.com/ultrain-os/robin-template.git",
   "license": "MIT",
-  "keywords": ["ultrain robin contract"],
+  "keywords": [
+    "ultrain robin contract"
+  ],
   "scripts": {
     "fix": "run-s fix:*",
     "fix:prettier": "prettier \"contract/**/*.ts\" --write",
-    "fix:tslint": "tslint --fix --project .",
-    "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('contract-base must be installed with Yarn: https://yarnpkg.com/')\" && yarn global add ultrascript"
+    "fix:tslint": "tslint --fix --project ."
   },
   "engines": {
     "node": ">=8.9"
@@ -21,19 +21,11 @@
     "ava": "^0.25.0",
     "codecov": "^3.0.0",
     "cz-conventional-changelog": "^2.1.0",
-    "gh-pages": "^1.0.0",
-    "npm-run-all": "^4.1.2",
-    "npm-scripts-info": "^0.3.6",
-    "nsp": "^3.2.1",
-    "nyc": "^11.5.0",
-    "opn-cli": "^3.1.0",
     "prettier": "^1.10.2",
     "standard-version": "^4.0.0",
-    "trash-cli": "^1.4.0",
     "tslint": "^5.4.3",
     "tslint-config-prettier": "^1.8.0",
     "tslint-immutable": "^4.5.1",
-    "typedoc": "^0.11.1",
     "typescript": "^2.8.3"
   },
   "ava": {
@@ -58,14 +50,10 @@
   "prettier": {
     "singleQuote": true
   },
-  "nyc": {
-    "exclude": [
-      "**/*.spec.js"
-    ]
-  },
   "dependencies": {
     "ContractSdk": "git+ssh://git@github.com:ultrain-os/TsSDK.git",
-    "u3.js": "git+ssh://git@github.com:ultrain-os/u3.js.git",
-    "lint": "git+ssh://git@github.com:ultrain-os/robin-lint.git"
+    "lint": "git+ssh://git@github.com:ultrain-os/robin-lint.git",
+    "u3.js": "https://github.com/ultrain-os/u3.js.git",
+    "ultrascript": "git+ssh://git@github.com/ultrain-os/assemblyscript.git"
   }
 }

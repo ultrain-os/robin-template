@@ -1,1 +1,1 @@
-/// <reference path="./src/types/webassembly.d.ts" />
+/// <reference path="./node_modules/ultrascript/std/assembly/index.d.ts" />

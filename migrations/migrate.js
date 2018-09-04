@@ -1,7 +1,4 @@
-const u3 = require('u3.js');
+const {U3} = require('u3.js');
 const config = require('../config');
-
-u3.Ultrain.abi2json('MyContract','ultrainio');
-const ultrain = u3.Ultrain(config);
-
-ultrain.deploy('MyContract', 'utrio.token');
+const u3 = U3.createU3(config);
+u3.deploy('build/MyContract', 'ultrainio');
