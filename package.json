@@ -10,7 +10,6 @@
     "ultrain robin contract"
   ],
   "scripts": {
-    "fix": "run-s fix:*",
     "fix:prettier": "prettier \"contract/**/*.ts\" --write",
     "fix:tslint": "tslint --fix --project ."
   },
@@ -25,7 +24,6 @@
     "standard-version": "^4.0.0",
     "tslint": "^5.4.3",
     "tslint-config-prettier": "^1.8.0",
-    "tslint-immutable": "^4.5.1",
     "typescript": "^2.8.3"
   },
   "ava": {
@@ -51,9 +49,10 @@
     "singleQuote": true
   },
   "dependencies": {
-    "ContractSdk": "git+ssh://git@github.com:ultrain-os/TsSDK.git",
-    "lint": "git+ssh://git@github.com:ultrain-os/robin-lint.git",
+    "ContractSdk": "https://github.com/ultrain-os/TsSDK.git",
+    "robin-cli": "https://github.com/ultrain-os/robin.git",
+    "robin-lint": "https://github.com/ultrain-os/robin-lint.git",
     "u3.js": "https://github.com/ultrain-os/u3.js.git",
-    "ultrascript": "git+ssh://git@github.com/ultrain-os/assemblyscript.git"
+    "ultrascript": "https://github.com/ultrain-os/assemblyscript.git"
   }
 }

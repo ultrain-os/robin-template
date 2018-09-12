@@ -1,26 +1,40 @@
 {
-  "extends": "./node_modules/lint/index.json",
+  "extends": [
+    "./node_modules/robin-lint/index.json",
+    "tslint-config-prettier"
+  ],
   "defaultSeverity": "warning",
   "rules": {
     "as-internal-case": {},
     "as-internal-diagnostics": {},
     "indent": {
-      "options": ["spaces", 2]
+      "options": [
+        "spaces",
+        2
+      ]
     },
     "max-line-length": {
-      "options": [{
-        "limit": 120,
-        "ignore-pattern": " *DiagnosticCode\\.[^ ]+,$"
-      }]
+      "options": [
+        {
+          "limit": 120,
+          "ignore-pattern": " *DiagnosticCode\\.[^ ]+,$"
+        }
+      ]
     },
     "member-access": {
-      "options": ["no-public"]
+      "options": [
+        "no-public"
+      ]
     },
     "quotemark": {
-      "options": ["double"]
+      "options": [
+        "double"
+      ]
     },
     "semicolon": {
-      "options": ["always"]
+      "options": [
+        "always"
+      ]
     },
     "whitespace": {
       "options": [
@@ -37,17 +51,23 @@
   },
   "jsRules": {
     "max-line-length": {
-      "options": [{
-        "limit": 120,
-        "ignore-pattern": " *DiagnosticCode\\.[^ ]+,$"
-      }]
+      "options": [
+        {
+          "limit": 120,
+          "ignore-pattern": " *DiagnosticCode\\.[^ ]+,$"
+        }
+      ]
     },
     "quotemark": {
-      "options": ["double"]
+      "options": [
+        "double"
+      ]
     },
     "radix": {},
     "semicolon": {
-      "options": ["always"]
+      "options": [
+        "always"
+      ]
     }
   }
 }

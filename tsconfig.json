@@ -2,6 +2,8 @@
   "extends": "./node_modules/ultrascript/std/assembly.json",
   "include": [
     "./contract/*.ts",
+    "./template/*.ts",
+    "./template/**/*.ts",
     "./index.d.ts"
   ],
   "compilerOptions": {
