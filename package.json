@@ -51,6 +51,7 @@
   "dependencies": {
     "ContractSdk": "https://github.com/ultrain-os/TsSDK.git",
     "robin-lint": "https://github.com/ultrain-os/robin-lint.git",
-    "u3.js": "https://github.com/ultrain-os/u3.js.git"
+    "u3.js": "https://github.com/ultrain-os/u3.js.git",
+    "ultrascript": "https://github.com/ultrain-os/assemblyscript.git"
   }
 }
