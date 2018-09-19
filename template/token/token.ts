@@ -16,7 +16,8 @@ const ACCOUNTTABLE: string = "accounts";
 
 export class Token extends Contract {
 
-    public create(issuer: account_name, maximum_supply: Asset): void {
+    create(issuer: account_name, maximum_supply: Asset): void {
+
         action.require_auth(this.receiver);
         let sym = maximum_supply.symbolName();
         ultrain_assert(maximum_supply.isSymbolValid(), "token.create: invalid symbol name.");
@@ -34,7 +35,7 @@ export class Token extends Contract {
         statstable.emplace(this.receiver, cs);
     }
 
-    public issue(to: account_name, quantity: Asset, memo: string): void {
+    issue(to: account_name, quantity: Asset, memo: string): void {
         ultrain_assert(quantity.isSymbolValid(), "token.issue: invalid symbol name");
         ultrain_assert(memo.length <= 256, "token.issue: memo has more than 256 bytes.");
 
@@ -68,7 +69,7 @@ export class Token extends Contract {
         }
     }
 
-    public transfer(from: u64, to: u64, quantity: Asset, memo: string): void {
+    transfer(from: u64, to: u64, quantity: Asset, memo: string): void {
         // Log.s("Transfer: ").i(from, 16).s("     ").i(to, 16).s("     ").s(memo).flush();
         // quantity.prints("Transfer");
         action.require_auth(from);
@@ -76,7 +77,7 @@ export class Token extends Contract {
 
         // let symname: SymbolName = quantity.symbolName();
         let statstable: DBManager<CurrencyStats> = new DBManager<CurrencyStats>(N(STATSTABLE), this.receiver, quantity.symbolName());
-        let st: CurrencyStats = new CurrencyStats(new Asset(), new Asset(), 0)
+        let st: CurrencyStats = new CurrencyStats(new Asset(), new Asset(), 0);
         let existing = statstable.get(quantity.symbolName(), st);
 
         ultrain_assert(existing, "token.transfer symbol name is not exist.");
@@ -124,19 +125,19 @@ export class Token extends Contract {
         }
     }
 
-    public getSupply(symname: symbol_name): Asset {
+    getSupply(symname: symbol_name): Asset {
         let statstable: DBManager<CurrencyStats> = new DBManager<CurrencyStats>(N(STATSTABLE), this.receiver, symname);
-        let st = new CurrencyStats(new Asset(), new Asset(), 0)
+        let st = new CurrencyStats(new Asset(), new Asset(), 0);
         let existing = statstable.get(symname, st);
         ultrain_assert(existing, "getSupply failed, states is not existed.");
         return st.supply;
     }
 
-    public getBalance(owner: account_name, symname: symbol_name): Asset {
+    getBalance(owner: account_name, symname: symbol_name): Asset {
         let accounts: DBManager<Account> = new DBManager<Account>(N(ACCOUNTTABLE), owner, symname);
         let account = new Account(new Asset());
         let existing = accounts.get(symname, account);
-        ultrain_assert(existing, "getBalance failed, account is not existed.")
+        ultrain_assert(existing, "getBalance failed, account is not existed.");
 
         return account.balance;
     }
