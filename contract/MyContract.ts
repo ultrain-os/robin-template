@@ -1,6 +1,6 @@
-import { RN } from "ContractSDK/src/utils";
+import { RN } from "ContractSDK/lib/name";
 import { Log } from "ContractSDK/src/log";
-import { Contract } from "ContractSDK/lib/contract";
+import { Contract } from "ContractSDK/src/contract";
 class HelloWorld extends Contract {
   @action
   hi(name: u64, age: u32, msg: string): void {
