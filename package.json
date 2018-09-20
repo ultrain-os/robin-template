@@ -9,21 +9,13 @@
   "keywords": [
     "ultrain robin contract"
   ],
-  "scripts": {
-    "fix:prettier": "prettier \"contract/**/*.ts\" --write",
-    "fix:tslint": "tslint --fix --project ."
-  },
   "engines": {
     "node": ">=8.9"
   },
   "devDependencies": {
     "ava": "^0.25.0",
     "codecov": "^3.0.0",
-    "cz-conventional-changelog": "^2.1.0",
-    "prettier": "^1.10.2",
-    "standard-version": "^4.0.0",
     "tslint": "^5.4.3",
-    "tslint-config-prettier": "^1.8.0",
     "typescript": "^2.8.3"
   },
   "ava": {
@@ -35,18 +27,10 @@
       "build/**/*.js"
     ]
   },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
-  },
   "greenkeeper": {
     "ignore": [
       "@types/node"
     ]
-  },
-  "prettier": {
-    "singleQuote": true
   },
   "dependencies": {
     "ContractSdk": "https://github.com/ultrain-os/TsSDK.git",
