@@ -13,7 +13,6 @@
     "node": ">=8.9"
   },
   "devDependencies": {
-    "ava": "^0.25.0",
     "codecov": "^3.0.0",
     "tslint": "^5.4.3",
     "typescript": "^2.8.3"

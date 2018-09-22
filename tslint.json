@@ -1,7 +1,6 @@
 {
   "extends": [
-    "./node_modules/robin-lint/index.json",
-    "tslint-config-prettier"
+    "./node_modules/robin-lint/index.json"
   ],
   "defaultSeverity": "warning",
   "rules": {
