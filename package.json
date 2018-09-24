@@ -2,39 +2,28 @@
   "name": "robin-template",
   "version": "0.0.1",
   "description": "The robin default template",
-  "main": "contract/index.ts",
+  "main": "contract/index.d.ts",
   "typings": "index.d.ts",
   "repository": "https://github.com/ultrain-os/robin-template.git",
   "license": "MIT",
   "keywords": [
-    "ultrain robin contract"
+    "ultrain contract template"
   ],
   "engines": {
     "node": ">=8.9"
   },
   "devDependencies": {
-    "codecov": "^3.0.0",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^5.2.0",
     "tslint": "^5.4.3",
-    "typescript": "^2.8.3"
-  },
-  "ava": {
-    "failFast": true,
-    "files": [
-      "build/**/*.spec.js"
-    ],
-    "sources": [
-      "build/**/*.js"
-    ]
-  },
-  "greenkeeper": {
-    "ignore": [
-      "@types/node"
-    ]
+    "typescript": "^2.8.3",
+    "u3-utils": "https://github.com/ultrain-os/u3-utils.git",
+    "u3.js": "https://github.com/ultrain-os/u3.js.git",
+    "ultrascript": "https://github.com/ultrain-os/assemblyscript.git"
   },
   "dependencies": {
     "ContractSdk": "https://github.com/ultrain-os/TsSDK.git",
-    "robin-lint": "https://github.com/ultrain-os/robin-lint.git",
-    "u3.js": "https://github.com/ultrain-os/u3.js.git",
-    "ultrascript": "https://github.com/ultrain-os/assemblyscript.git"
+    "robin-lint": "https://github.com/ultrain-os/robin-lint.git"
   }
 }

@@ -1,6 +1,19 @@
-import { test } from "ava";
+const U3Utils = require('u3-utils/dist/es5');
+const { createU3 } = require('u3.js/src');
+const config = require('../config');
 
-test("sum", t => {
-  //t.is(MyContract.prototype.sum(2, 3), 5);
+const chai = require('chai');
+require('chai')
+  .use(require('chai-as-promised'))
+  .should();
+
+const should = chai.should();
+const expect = chai.expect;
+const assert = chai.assert;
+
+describe('Contract\'s test cases', function() {
+
+  it('case1', async () => {
+
+  });
 });
-
