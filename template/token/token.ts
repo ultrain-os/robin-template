@@ -1,16 +1,16 @@
 /**
  * @author fanliangqin@ultrain.io
  */
-import { Contract } from "ContractSdk/src/contract";
-import { Asset } from "ContractSdk/src/asset";
-import { ultrain_assert} from "ContractSdk/src/utils";
-import { DBManager } from "ContractSdk/src/dbmanager";
-import { TransferParams, dispatchInline } from "ContractSdk/src/action";
-import { PermissionLevel } from "ContractSdk/lib/permission-level";
-import { env as action } from "ContractSdk/internal/action.d";
-import { CurrencyStats, CurrencyAccount } from "ContractSdk/lib/balance";
-import { NEX } from "ContractSdk/lib/name_ex";
-import { NAME } from "ContractSdk/src/account";
+import { Contract } from "ultrain-ts-lib/src/contract";
+import { Asset } from "ultrain-ts-lib/src/asset";
+import { ultrain_assert} from "ultrain-ts-lib/src/utils";
+import { DBManager } from "ultrain-ts-lib/src/dbmanager";
+import { TransferParams, dispatchInline } from "ultrain-ts-lib/src/action";
+import { PermissionLevel } from "ultrain-ts-lib/lib/permission-level";
+import { env as action } from "ultrain-ts-lib/internal/action.d";
+import { CurrencyStats, CurrencyAccount } from "ultrain-ts-lib/lib/balance";
+import { NEX } from "ultrain-ts-lib/lib/name_ex";
+import { NAME } from "ultrain-ts-lib/src/account";
 
 const STATSTABLE: string = "stat";
 const ACCOUNTTABLE: string = "accounts";
