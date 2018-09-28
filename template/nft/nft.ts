@@ -84,6 +84,7 @@ class Token implements Serializable {
   }
 
   print(): void {
+    // @ts-ignore
     Log.s('token id:').i(this.id).s('owner:').s(ACCOUNT(this.owner).name).s('uri:').s(this.uri).s('name:').s(this.name).s('current_id:').i(this.current_id).flush();
   }
 
@@ -119,9 +120,9 @@ const STATSTABLE: string = 'stat';
 const ACCOUNTTABLE: string = 'account';
 const TOKENTABLE: string = 'token';
 
-@database(Token, TOKENTABLE, '')
-@database(CurrencyStats, STATSTABLE, '')
-@database(NftAccount, ACCOUNTTABLE, '')
+@database(Token, TOKENTABLE)
+@database(CurrencyStats, STATSTABLE)
+@database(NftAccount, ACCOUNTTABLE)
 export class Nft extends Contract {
 
   constructor(receiver: account_name) {
