@@ -1,5 +1,5 @@
 const config = {
-  httpEndpoint: "http://127.0.0.1:8888",
+  httpEndpoint: 'http://127.0.0.1:8888',
   broadcast: true,
   debug: false,
   verbose: false,
@@ -9,8 +9,8 @@ const config = {
     error: console.error,
     debug: console.log
   },
-  chainId:'2616bfbc21e11d60d10cb798f00893c2befba10e2338b7277bb3865d2e658f58',
-  keyProvider:'5Hw4r3QSmiDFq3qkYfvkzew86agrKHRN9j478CqjuyPMV3ERJuF',
+  chainId: '2616bfbc21e11d60d10cb798f00893c2befba10e2338b7277bb3865d2e658f58',
+  keyProvider: '5JbedY3jGfNK7HcLXcqGqSYrmX2n8wQWqZAuq6K7Gcf4Dj62UfL',//ben's private_key
   binaryen: require('binaryen')
 };
 module.exports = config;
