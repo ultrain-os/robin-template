@@ -26,20 +26,21 @@ const scope = "dept.sales";
 class PersonContract extends Contract {
 
   db: DBManager<Person>;
-
+  /**
+   * onInit is called automatically before executing an aciton.
+   */
   onInit(): void {
     this.db = new DBManager<Person>(NAME(tblname), this.receiver, NAME(scope));
   }
-
+  /**
+   * onStop is called automatically after executing an action.
+   */
   onStop(): void {
 
   }
 
   constructor(code: u64) {
     super(code);
-    this._receiver = code;
-
-    this.onInit();
   }
 
   @action
