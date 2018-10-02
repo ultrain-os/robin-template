@@ -72,7 +72,7 @@ export class Token extends Contract {
   }
 
   @action
-  public transfer(from: u64, to: u64, quantity: Asset, memo: string): void {
+  public transfer(from: account_name, to: account_name, quantity: Asset, memo: string): void {
     // Log.s("Transfer: ").i(from, 16).s("     ").i(to, 16).s("     ").s(memo).flush();
     // quantity.prints("Transfer");
     ultrain_assert(from != to, 'token.transfer: cannot transfer to self.');
@@ -97,7 +97,7 @@ export class Token extends Contract {
     this.addBalance(to, quantity, from);
   }
 
-  private subBalance(owner: u64, value: Asset): void {
+  private subBalance(owner: account_name, value: Asset): void {
     let ats: DBManager<CurrencyAccount> = new DBManager<CurrencyAccount>(NAME(ACCOUNTTABLE), this.receiver, owner);
     let from: CurrencyAccount = new CurrencyAccount(new Asset());
     let existing = ats.get(value.symbolName(), from);
@@ -114,7 +114,7 @@ export class Token extends Contract {
     }
   }
 
-  private addBalance(owner: u64, value: Asset, ram_payer: u64): void {
+  private addBalance(owner: account_name, value: Asset, ram_payer: u64): void {
     let toaccount: DBManager<CurrencyAccount> = new DBManager<CurrencyAccount>(NAME(ACCOUNTTABLE), this.receiver, owner);
     let to: CurrencyAccount = new CurrencyAccount(new Asset());
     let existing = toaccount.get(value.symbolName(), to);
