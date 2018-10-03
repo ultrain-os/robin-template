@@ -15,6 +15,8 @@ import { NAME } from 'ultrain-ts-lib/src/account';
 const STATSTABLE: string = 'stat';
 const ACCOUNTTABLE: string = 'accounts';
 
+@database(CurrencyStats, STATSTABLE)
+@database(CurrencyAccount, ACCOUNTTABLE)
 export class Token extends Contract {
 
   @action

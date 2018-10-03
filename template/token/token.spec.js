@@ -36,7 +36,7 @@ describe('Contract\'s test cases', function() {
 
 
     //must wait
-    U3Utils.wait(2000)
+    U3Utils.wait(10000)
 
 
     const tr = await u3.contract(account);
