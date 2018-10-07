@@ -22,9 +22,9 @@
     "typescript": "^2.8.3",
     "u3-utils": "0.0.1",
     "u3.js": "^0.1.2",
-    "ultrascript": "^0.0.3"
+    "ultrascript": "^0.0.4"
   },
   "dependencies": {
-    "ultrain-ts-lib": "^0.0.3"
+    "ultrain-ts-lib": "^0.0.4"
   }
 }
