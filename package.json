@@ -25,6 +25,6 @@
     "ultrascript": "^0.0.5"
   },
   "dependencies": {
-    "ultrain-ts-lib": "^0.0.4"
+    "ultrain-ts-lib": "^0.0.5"
   }
 }
