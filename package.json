@@ -1,6 +1,6 @@
 {
   "name": "robin-template",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "The robin default template",
   "main": "contract/index.d.ts",
   "typings": "index.d.ts",
@@ -22,9 +22,9 @@
     "typescript": "^2.8.3",
     "u3-utils": "0.0.1",
     "u3.js": "^0.1.2",
-    "ultrascript": "^0.0.7"
+    "ultrascript": "^0.0.8"
   },
   "dependencies": {
-    "ultrain-ts-lib": "^0.0.5"
+    "ultrain-ts-lib": "^0.0.6"
   }
 }

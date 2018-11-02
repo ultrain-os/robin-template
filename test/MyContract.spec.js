@@ -13,7 +13,7 @@ const assert = chai.assert;
 
 describe('Test cases', function() {
 
-  it('event register', async () => {
+  it('register', async () => {
 
     let account = 'ben';
     const u3 = createU3(config);
@@ -28,7 +28,7 @@ describe('Test cases', function() {
   });
 
 
-  it('event unregister', async () => {
+  it('unregister', async () => {
 
     let account = 'ben';
     const u3 = createU3(config);
