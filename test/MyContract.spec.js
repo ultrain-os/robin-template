@@ -1,4 +1,4 @@
-const U3Utils = require('u3-utils/dist/es5');
+const U3Utils = require('u3-utils/src');
 const { createU3, format, listener } = require('u3.js/src');
 const config = require('../config');
 
@@ -19,7 +19,7 @@ describe('Test cases', function() {
     const u3 = createU3(config);
     await u3.registerEvent(account, 'http://10.10.10.114:3002');
 
-    U3Utils.wait(1000);
+    U3Utils.test.wait(1000);
 
     listener(function(data) {
       console.log(data);
@@ -34,7 +34,7 @@ describe('Test cases', function() {
     const u3 = createU3(config);
     await u3.unregisterEvent(account, 'http://10.10.10.114:3002');
 
-    U3Utils.wait(1000);
+    U3Utils.test.wait(1000);
 
     listener(function(data) {
       console.log(data);
