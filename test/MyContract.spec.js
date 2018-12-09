@@ -45,7 +45,7 @@ describe('Test cases', function() {
     let account = 'ben';
     const u3 = createU3(config);
     const contract = await u3.contract(account);
-    contract.hi('ben', 30, 'It is a test', { authorization: [`ben@active`] });
+    await contract.hi('ben', 30, 'It is a test', { authorization: [`ben@active`] });
   });
 
 
@@ -54,7 +54,7 @@ describe('Test cases', function() {
     let account = 'ben';
     const u3 = createU3(config);
     const contract = await u3.contract(account);
-    const tx = contract.hi('ben', 30, 'It is a test', { authorization: [`ben@active`] });
+    const tx = await contract.hi('ben', 30, 'It is a test', { authorization: [`ben@active`] });
 
     //wait util it was packed in a block
     let tx_trace = await u3.getTxByTxId(tx.transaction_id);
