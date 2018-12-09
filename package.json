@@ -21,8 +21,8 @@
     "tslint": "^5.4.3",
     "typescript": "^2.8.3",
     "u3-utils": "0.0.2",
-    "u3.js": "^0.2.6",
-    "ultrascript": "^0.0.12"
+    "u3.js": "^0.2.8",
+    "ultrascript": "0.0.12"
   },
   "dependencies": {
     "ultrain-ts-lib": "0.0.8"

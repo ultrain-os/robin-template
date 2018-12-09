@@ -8,8 +8,6 @@ require('chai')
   .should();
 
 const should = chai.should();
-const expect = chai.expect;
-const assert = chai.assert;
 
 describe('Test cases', function() {
 
@@ -42,16 +40,16 @@ describe('Test cases', function() {
   });
 
 
-  it('call a action(not wait packed)', async () => {
+  it('transaction', async () => {
 
     let account = 'ben';
     const u3 = createU3(config);
     const contract = await u3.contract(account);
-    const tx = contract.hi('ben', 30, 'It is a test', { authorization: [`ben@active`] });
+    contract.hi('ben', 30, 'It is a test', { authorization: [`ben@active`] });
   });
 
 
-  it('call a action(wait util it was packed', async () => {
+  it('block', async () => {
 
     let account = 'ben';
     const u3 = createU3(config);
@@ -61,7 +59,7 @@ describe('Test cases', function() {
     //wait util it was packed in a block
     let tx_trace = await u3.getTxByTxId(tx.transaction_id);
     while (!tx_trace.irreversible) {
-      await U3Utils.wait(1000);
+      await U3Utils.test.wait(1000);
       tx_trace = await u3.getTxByTxId(tx.transaction_id);
       if (tx_trace.irreversible) {
         console.log(tx);
