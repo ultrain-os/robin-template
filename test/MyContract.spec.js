@@ -11,35 +11,6 @@ const should = chai.should();
 
 describe('Test cases', function() {
 
-  it('register', async () => {
-
-    let account = 'ben';
-    const u3 = createU3(config);
-    await u3.registerEvent(account, 'http://10.10.10.114:3002');
-
-    U3Utils.test.wait(1000);
-
-    listener(function(data) {
-      console.log(data);
-    });
-
-  });
-
-
-  it('unregister', async () => {
-
-    let account = 'ben';
-    const u3 = createU3(config);
-    await u3.unregisterEvent(account, 'http://10.10.10.114:3002');
-
-    U3Utils.test.wait(1000);
-
-    listener(function(data) {
-      console.log(data);
-    });
-  });
-
-
   it('transaction', async () => {
 
     let account = 'ben';
