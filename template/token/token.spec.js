@@ -1,4 +1,4 @@
-const U3Utils = require('u3-utils/dist/es5');
+const U3Utils = require('u3-utils/src');
 const { createU3, format } = require('u3.js/src');
 const config = require('../../config');
 
@@ -36,7 +36,7 @@ describe('Contract\'s test cases', function() {
 
 
     //must wait
-    U3Utils.wait(10000)
+    U3Utils.test.wait(10000)
 
 
     const tr = await u3.contract(account);
