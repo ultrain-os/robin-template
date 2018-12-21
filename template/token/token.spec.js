@@ -11,11 +11,18 @@ const should = chai.should();
 const expect = chai.expect;
 const assert = chai.assert;
 
+function randomString (length = 8, charset = 'abcdefghijklmnopqrstuvwxyz') {
+  let text = ''
+  for (let i = 0; i < length; i++)
+    text += charset.charAt(Math.floor(Math.random() * charset.length))
+  return text
+}
+
 describe('Contract\'s test cases', function() {
 
   it('can create and issue a token and transfer', async () => {
 
-    let SYMBOL = U3Utils.randomString().toUpperCase().substring(0, 4);
+    let SYMBOL = randomString().toUpperCase().substring(0, 4);
 
     const u3 = createU3(config);
     let account = 'ben';
