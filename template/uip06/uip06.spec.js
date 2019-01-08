@@ -7,10 +7,6 @@ require('chai')
   .use(require('chai-as-promised'))
   .should();
 
-const should = chai.should();
-const expect = chai.expect;
-const assert = chai.assert;
-
 function randomString (length = 8, charset = 'abcdefghijklmnopqrstuvwxyz') {
   let text = ''
   for (let i = 0; i < length; i++)
@@ -18,7 +14,7 @@ function randomString (length = 8, charset = 'abcdefghijklmnopqrstuvwxyz') {
   return text
 }
 
-describe('Contract\'s test cases', function() {
+describe('TestCases', function() {
 
   it('can create and issue a token and transfer', async () => {
 
