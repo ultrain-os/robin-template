@@ -25,11 +25,6 @@
         "no-public"
       ]
     },
-    "quotemark": {
-      "options": [
-        "double"
-      ]
-    },
     "semicolon": {
       "options": [
         "always"
@@ -55,11 +50,6 @@
           "limit": 120,
           "ignore-pattern": " *DiagnosticCode\\.[^ ]+,$"
         }
-      ]
-    },
-    "quotemark": {
-      "options": [
-        "double"
       ]
     },
     "radix": {},
