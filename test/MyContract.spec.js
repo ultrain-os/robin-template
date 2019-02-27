@@ -32,7 +32,7 @@ describe("Test cases", function() {
     let time = 0;
     let timer = setInterval(async () => {
       time++;
-      if (time >= 60) {
+      if (time >= 70) {
         clearInterval(timer);
         return;
       }
