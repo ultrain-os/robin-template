@@ -38,6 +38,7 @@ describe("Test cases", function() {
       }
       tx_trace = await u3.getTxByTxId(tx.transaction_id);
       if (tx_trace.irreversible) {
+        // eslint-disable-next-line
         console.log("Confirmed success");
         clearInterval(timer);
       } else {
