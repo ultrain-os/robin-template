@@ -10,8 +10,8 @@ const config = {
     console: true, // print to console
     file: false // append to file
   },
-  symbol: "UGAS"
-  //keyProvider:[],
+  symbol: "UGAS",
+  keyProvider:['5JbedY3jGfNK7HcLXcqGqSYrmX2n8wQWqZAuq6K7Gcf4Dj62UfL'],
   //expireInSeconds:60
 };
 module.exports = config;
