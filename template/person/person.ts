@@ -10,11 +10,11 @@ class Address implements Serializable {
 
 class Person implements Serializable {
   @primaryid
-  id: u64;
+  id  : u64;
   name: string;
   age: u32;
   sex: string;
-  address: Address;
+  address: Address = new Address();
   @ignore
   salary: u32;
 
@@ -39,8 +39,8 @@ class HumanResource extends Contract {
 
   constructor(code: u64) {
     super(code);
-    this.salesdb = new DBManager<Person>(NAME(salestable), this.receiver, NAME(salestable));
-    this.marketingdb = new DBManager<Person>(NAME(marketingtable), this.receiver, NAME(marketingtable));
+    this.salesdb = new DBManager<Person>(NAME(salestable), NAME(salestable));
+    this.marketingdb = new DBManager<Person>(NAME(marketingtable), NAME(marketingtable));
   }
 
   @action
@@ -55,7 +55,7 @@ class HumanResource extends Contract {
 
     let existing = this.salesdb.exists(id);
     ultrain_assert(!existing, "this person has existed in db yet.");
-    this.salesdb.emplace(this.receiver, p);
+    this.salesdb.emplace(p);
   }
 
   @action
@@ -70,7 +70,7 @@ class HumanResource extends Contract {
 
     let existing = this.marketingdb.exists(id);
     ultrain_assert(!existing, "this person has existed in db yet.");
-    this.marketingdb.emplace(this.receiver, p);
+    this.marketingdb.emplace(p);
   }
 
   @action
@@ -79,10 +79,10 @@ class HumanResource extends Contract {
     let existing = this.salesdb.get(id, p);
     ultrain_assert(existing, "the person does not exist.");
 
-    p.name = name;
+    p.name   = name;
     p.salary = salary;
 
-    this.salesdb.modify(this.receiver, p);
+    this.salesdb.modify(p);
   }
 
   @action
@@ -95,7 +95,7 @@ class HumanResource extends Contract {
 
   @action
   enumrate(dbname: string): void {
-    let cursor: Cursor<Person>;
+    let cursor: Cursor<Person> = new Cursor<Person>();
     if (dbname == "sales") {
       cursor = this.salesdb.cursor();
     } else if (dbname == "marketing") {
@@ -105,7 +105,7 @@ class HumanResource extends Contract {
     }
     Log.s("cursor.count =").i(cursor.count).flush();
 
-    while (cursor.hasNext()) {
+    while(cursor.hasNext()) {
       let p = cursor.get();
       p.prints();
       cursor.next();
@@ -113,11 +113,23 @@ class HumanResource extends Contract {
   }
 
   @action
+  drop(dbname: string): void {
+    if (dbname == "sales") {
+      this.salesdb.dropAll();
+    } else if (dbname == "marketing") {
+      this.marketingdb.dropAll();
+    } else {
+      ultrain_assert(false, "unknown db name.");
+    }
+  }
+
+
+  @action
   pubkeyOf(account: account_name): void {
-    let key = Account.publicKeyOf(account, "wif");
-    Log.s("public key with WIF is : ").s(key).flush();
-    key = Account.publicKeyOf(account, "hex");
-    Log.s("public key with HEX is : ").s(key).flush();
+    let key = Account.publicKeyOf(account, 'wif');
+    Log.s("public key with WIF is : " ).s(key).flush();
+    key = Account.publicKeyOf(account, 'hex');
+    Log.s("public key with HEX is : " ).s(key).flush();
 
   }
 }
