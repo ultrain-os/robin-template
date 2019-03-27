@@ -5,13 +5,12 @@ import { Contract } from "ultrain-ts-lib/src/contract";
 import { Asset, StringToSymbol } from "ultrain-ts-lib/src/asset";
 import { TransferParams } from "ultrain-ts-lib/src/action";
 import { PermissionLevel } from "ultrain-ts-lib/src/permission-level";
-import { env as action } from "ultrain-ts-lib/internal/action";
+import { env as action } from "ultrain-ts-lib/internal/action.d";
 import { CurrencyStats, CurrencyAccount } from "ultrain-ts-lib/lib/balance";
-import { NAME, Account, RNAME } from "ultrain-ts-lib/src/account";
+import { NAME, Account } from "ultrain-ts-lib/src/account";
 import { NEX, NameEx } from "ultrain-ts-lib/lib/name_ex";
 import { Action } from "ultrain-ts-lib/src/action";
 import { UIP06 } from "ultrain-ts-lib/uips/uip06";
-
 
 const StatsTable: string = "stat";
 const AccountTable: string = "accounts";
@@ -81,7 +80,7 @@ export class Token extends Contract implements UIP06 {
 
     // let symname: SymbolName = quantity.symbolName();
     let statstable: DBManager<CurrencyStats> = new DBManager<CurrencyStats>(NAME(StatsTable), quantity.symbolName());
-    let st: CurrencyStats = new CurrencyStats();
+    let st: CurrencyStats = new CurrencyStats()
     let existing = statstable.get(quantity.symbolName(), st);
 
     ultrain_assert(existing, "token.transfer symbol name is not exist.");
@@ -124,7 +123,7 @@ export class Token extends Contract implements UIP06 {
     let accounts: DBManager<CurrencyAccount> = new DBManager<CurrencyAccount>(NAME(AccountTable), owner);
     let account = new CurrencyAccount(new Asset());
     let existing = accounts.get(symname, account);
-    ultrain_assert(existing, "balanceOf failed, account is not existed.");
+    ultrain_assert(existing, "balanceOf failed, account is not existed.")
 
     return account.balance;
   }
