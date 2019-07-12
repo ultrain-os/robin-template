@@ -21,9 +21,9 @@
     "tslint": "^5.4.3",
     "typescript": "^2.8.3",
     "u3.js": "^0.3.12",
-    "ultrascript": "^1.0.4"
+    "ultrascript": "^1.1.0"
   },
   "dependencies": {
-    "ultrain-ts-lib": "^0.1.4"
+    "ultrain-ts-lib": "^0.2.1"
   }
 }
