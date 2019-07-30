@@ -18,7 +18,6 @@ const AccountTable: string = "accounts";
 @database(CurrencyStats, StatsTable)
 @database(CurrencyAccount, AccountTable)
 class Token extends Contract implements UIP06{
-
   @action
   public create(issuer: account_name, maximum_supply: Asset): void {
     Action.requireAuth (this.receiver);
@@ -159,4 +158,10 @@ class Token extends Contract implements UIP06{
       toaccount.modify(to);
     }
   }
+
+
+  public totalSupplies(): Asset[] {
+    throw new Error('Method not implemented.');
+  }
+
 }

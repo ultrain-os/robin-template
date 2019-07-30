@@ -1,5 +1,4 @@
-const U3Utils = require('u3-utils/src');
-const { createU3, format } = require('u3.js/src');
+const { createU3, U3Utils } = require('u3.js');
 const config = require('../../config');
 
 const chai = require('chai');
