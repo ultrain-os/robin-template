@@ -7,21 +7,21 @@ import { TransferParams } from "ultrain-ts-lib/src/action";
 import { PermissionLevel } from "ultrain-ts-lib/src/permission-level";
 import { env as action } from "ultrain-ts-lib/internal/action.d";
 import { CurrencyStats, CurrencyAccount } from "ultrain-ts-lib/lib/balance";
-import { NAME, Account } from "ultrain-ts-lib/src/account";
-import { NEX, NameEx } from "ultrain-ts-lib/lib/name_ex";
+import { NAME, Account, RNAME } from "ultrain-ts-lib/src/account";
+import { NEX, NameEx} from "ultrain-ts-lib/lib/name_ex";
 import { Action } from "ultrain-ts-lib/src/action";
 import { UIP06 } from "ultrain-ts-lib/uips/uip06";
 
-const StatsTable: string = "stat";
+const StatsTable  : string = "stat";
 const AccountTable: string = "accounts";
 
 @database(CurrencyStats, StatsTable)
 @database(CurrencyAccount, AccountTable)
-export class Token extends Contract implements UIP06 {
+class Token extends Contract implements UIP06{
 
   @action
   public create(issuer: account_name, maximum_supply: Asset): void {
-    Action.requireAuth(this.receiver);
+    Action.requireAuth (this.receiver);
     let sym = maximum_supply.symbolName();
     ultrain_assert(maximum_supply.isSymbolValid(), "token.create: invalid symbol name.");
     ultrain_assert(maximum_supply.isValid(), "token.create: invalid supply.");
@@ -61,14 +61,14 @@ export class Token extends Contract implements UIP06 {
     if (to != st.issuer) {
       let pl: PermissionLevel = new PermissionLevel();
       pl.actor = st.issuer;
-      pl.permission = NAME("active");
+      pl.permission = "active";
       let params = new TransferParams(0, 0, new Asset(), "");
       params.from = st.issuer;
       params.to = to;
       params.quantity = quantity;
       params.memo = memo;
-      let name: NameEx = NEX("transfer");
-      Action.sendInline([pl], this.receiver, name, params);
+      let name = "transfer";
+      Action.sendInline([pl], RNAME(this.receiver), name, params);
     }
   }
 
@@ -158,9 +158,5 @@ export class Token extends Contract implements UIP06 {
       to.balance.setAmount(amount);
       toaccount.modify(to);
     }
-  }
-
-  totalSupplies(): Asset[] {
-    return [];
   }
 }
