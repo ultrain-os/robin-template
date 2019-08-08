@@ -1,4 +1,3 @@
-import "allocator/arena";
 import { Contract } from "ultrain-ts-lib/src/contract";
 import { Log } from "ultrain-ts-lib/src/log";
 import { NAME, Account } from "ultrain-ts-lib/src/account";
