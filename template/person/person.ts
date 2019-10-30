@@ -3,16 +3,16 @@ import { Log } from "ultrain-ts-lib/src/log";
 import { NAME, Account } from "ultrain-ts-lib/src/account";
 
 class Address implements Serializable {
-  street: string;
-  post: string;
+  street: string = "";
+  post: string = "";
 }
 
 class Person implements Serializable {
   @primaryid
   id  : u64;
-  name: string;
+  name: string = "";
   age: u32;
-  sex: string;
+  sex: string = "";
   address: Address = new Address();
   @ignore
   salary: u32;
@@ -94,7 +94,7 @@ class HumanResource extends Contract {
 
   @action
   enumrate(dbname: string): void {
-    let cursor: Cursor<Person> = new Cursor<Person>();
+    let cursor: Cursor<Person>;
     if (dbname == "sales") {
       cursor = this.salesdb.cursor();
     } else if (dbname == "marketing") {
